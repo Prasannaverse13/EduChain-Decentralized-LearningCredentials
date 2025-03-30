@@ -12,15 +12,13 @@ The platform addresses a critical problem in the global education landscape: the
 
 EduChain is fully integrated with the Stellar network in the following ways:
 
-1. **Deployed Smart Contract**: We have deployed a real smart contract on the Stellar testnet with transaction hash `218c43e3d12b9391e676c3e1b8c3fa7a4a0d790c8f1c174f82bf86ce62b177f3`.
-
+1. **Deployed Smart Contract**: We have deployed a real smart contract on the Stellar testnet.
 2. **Contract ID**: The contract is accessible at `GB2C5CPLVWQMNBQQXDWBCTDNBPCZPMEQGN4OGEJE3S6GK2UTHVV5DJHW` and can be viewed on [Stellar Expert](https://stellar.expert/explorer/testnet/account/GB2C5CPLVWQMNBQQXDWBCTDNBPCZPMEQGN4OGEJE3S6GK2UTHVV5DJHW).
-
-3. **Stellar SDK Integration**: The application uses the Stellar SDK for both client and server-side operations, with comprehensive transaction handling, account management, and credential verification.
-
-4. **Wallet Integration**: The platform supports both MetaMask and Freighter wallets, with a clean UI for wallet selection and connection.
-
-5. **Asset Management**: Educational credentials are represented as custom Stellar assets with unique identifiers, creating a permanent link between the learner and their achievements.
+3. **Transaction Hash**: `218c43e3d12b9391e676c3e1b8c3fa7a4a0d790c8f1c174f82bf86ce62b177f3`
+4. **Stellar Testnet Deployment Verification**: The contract is deployed on Stellar's testnet server: [Horizon Testnet](https://horizon-testnet.stellar.org).
+5. **Stellar SDK Integration**: The application uses the Stellar SDK for both client and server-side operations, with comprehensive transaction handling, account management, and credential verification.
+6. **Wallet Integration**: The platform supports both MetaMask and Freighter wallets, with a clean UI for wallet selection and connection.
+7. **Asset Management**: Educational credentials are represented as custom Stellar assets with unique identifiers, creating a permanent link between the learner and their achievements.
 
 ### Core Files for Stellar Integration
 
@@ -29,18 +27,15 @@ EduChain is fully integrated with the Stellar network in the following ways:
   - Asset issuance (for credentials)
   - Smart contract interaction
   - Credential verification via the Stellar blockchain
-
 - **[`client/src/lib/stellar.ts`](client/src/lib/stellar.ts)**: Client-side Stellar integration including:
   - Contract information and references
   - Credential verification functions
   - Account status checks
   - Stellar Explorer links
-
 - **[`client/src/lib/wallet.ts`](client/src/lib/wallet.ts)**: Wallet providers (MetaMask and Freighter) with consistent interfaces for:
   - Connection handling
   - Transaction signing
   - Public key management
-
 - **[`deploy-contract.js`](deploy-contract.js)**: Script used to deploy our Stellar smart contract with metadata tags for educational credentials.
 
 ### Full Stack Architecture
@@ -59,11 +54,8 @@ The platform follows a modern web application pattern:
 We chose Stellar for several key reasons:
 
 1. **Speed and Cost**: Stellar's low transaction fees and fast confirmation times are ideal for educational credentials that need to be accessible globally, including in regions with limited resources.
-
 2. **Asset Tokenization**: Stellar's native support for custom assets makes it perfect for representing different types of credentials as unique tokens.
-
 3. **Smart Contract Capabilities**: While Stellar's smart contract system is different from Ethereum's, its capabilities are well-suited for managing verifiable credentials with immutable records.
-
 4. **Global Accessibility**: Stellar's focus on financial inclusion aligns with our goal of making education more accessible worldwide.
 
 ### Smart Contract Implementation
@@ -71,11 +63,8 @@ We chose Stellar for several key reasons:
 Our unique approach to smart contracts on Stellar:
 
 1. We utilize Stellar's account-based structure as a contract, with the account holding metadata about the credential standard and verification methods.
-
 2. Each credential issuance creates a unique asset tied to the contract account, creating an immutable record of the credential's existence and properties.
-
 3. Metadata and memo fields are used to store essential credential data like skills, issuing institution, and recipient information.
-
 4. The contract's transaction history serves as an immutable audit trail of all credentials issued through the platform.
 
 ## Deployment and Testing
@@ -96,7 +85,7 @@ Our unique approach to smart contracts on Stellar:
 
 To test the credential verification system:
 
-1. Connect a wallet (MetaMask or Freighter) 
+1. Connect a wallet (MetaMask or Freighter)
 2. Navigate to the Credentials page
 3. Enter a Stellar transaction hash for a credential
 4. The system will verify the credential on the Stellar testnet and display the details
@@ -106,11 +95,8 @@ To test the credential verification system:
 EduChain brings several unique innovations to the Stellar ecosystem:
 
 1. **Education-Focused Contract Design**: Our smart contract is specifically designed for educational credentials, with metadata fields optimized for skills, learning outcomes, and institutional information.
-
 2. **Dual Wallet Support**: The seamless integration of both Freighter (Stellar native) and MetaMask wallets makes our platform accessible to users from both the Stellar and Ethereum ecosystems.
-
 3. **Credential Verification Standard**: We've created a verification standard for educational credentials on Stellar that could be adopted by other applications in the education space.
-
 4. **Global Focus**: The platform is designed with global accessibility in mind, making it suitable for educational institutions in regions where traditional credentialing systems may be less developed.
 
 ## Team Experience with Stellar
@@ -131,23 +117,17 @@ Future developments for EduChain include:
 3. Implementation of Stellar payment rails for course enrollments
 4. Mobile application with credential wallet features
 
----
-
 ## Hackathon Requirements Fulfillment
 
 ### Stellar Network Integration
 
-- ✅ **Deployed to Stellar testnet**: Our contract is live on the Stellar testnet at account `GB2C5CPLVWQMNBQQXDWBCTDNBPCZPMEQGN4OGEJE3S6GK2UTHVV5DJHW`
-- ✅ **Integration with Stellar's developer tools**: We use the official Stellar SDK, Horizon API, and Stellar Expert for transactions and verification
-- ✅ **Full implementation of Stellar's smart contract capabilities**: Our solution leverages Stellar's account and data entry mechanisms to create a functional credential issuance system
-
-### User Experience
-
-- ✅ **Wallet Connection**: Users can connect both MetaMask and Freighter wallets
-- ✅ **Credential Verification**: Simple interface for verifying credentials via transaction hash
-- ✅ **Course Exploration**: Browse available courses before connecting a wallet
-- ✅ **Enrollment**: Connect wallet to enroll in courses and receive credentials
+- ✅ **Deployed to Stellar testnet**: The contract is deployed at address `GB2C5CPLVWQMNBQQXDWBCTDNBPCZPMEQGN4OGEJE3S6GK2UTHVV5DJHW`
+- ✅ **Transaction hash**: `218c43e3d12b9391e676c3e1b8c3fa7a4a0d790c8f1c174f82bf86ce62b177f3`
+- ✅ **Stellar testnet deployment verification**: Using Stellar's testnet server: [Horizon Testnet](https://horizon-testnet.stellar.org)
+- ✅ **Integration with Stellar's developer tools**: Using official `stellar-sdk` package, Horizon API, and Stellar Expert for verification
+- ✅ **Smart contract capabilities implementation**: Credential issuance using Stellar's asset system, contract metadata storage using `manageData`, and trust line management for tokens
 
 ---
 
 *Visit our deployed contract on [Stellar Expert](https://stellar.expert/explorer/testnet/account/GB2C5CPLVWQMNBQQXDWBCTDNBPCZPMEQGN4OGEJE3S6GK2UTHVV5DJHW)*
+
